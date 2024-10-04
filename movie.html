@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
             text-align: center;
             padding: 20px;
         }
@@ -17,7 +17,7 @@
             display: flex; /* Use flexbox for layout */
             max-width: 800px;
             margin: auto;
-            background-color: #1e1e1e;
+            background-color: #1e1e1e; /* Darker background for movie details */
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
@@ -37,6 +37,7 @@
         .movie-info h1 {
             font-size: 2rem;
             margin: 0 0 10px 0; /* Margin below title */
+            color: orange; /* Title color */
         }
 
         .movie-info p {
@@ -55,8 +56,8 @@
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #3f51b5;
-            color: white;
+            background-color: orange; /* Orange background */
+            color: black; /* Black text */
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -65,7 +66,7 @@
         }
 
         .back-button:hover, .trailer-button:hover {
-            background-color: #304ffe;
+            background-color: #ff9800; /* Darker orange on hover */
         }
 
         /* Modal Styles */
@@ -118,6 +119,14 @@
             text-align: center; /* Centered text */
             border-top: 1px solid #333; /* Top border */
         }
+
+        footer a {
+            color: orange; /* Orange link color */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
     </style>
 </head>
 <body>
@@ -145,7 +154,7 @@
     <div id="trailerModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Trailer</h2>
+            <h2 style="color: orange;">Trailer</h2> <!-- Trailer title color -->
             <iframe id="trailer" src="" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
@@ -155,7 +164,7 @@
         <p>&copy; 2024 Your MOVIE-BASE | by <a href="https://" >BTEM</a></p>
         <p>
             Follow us on
-            <a href="https://www.facebook.com" style="color: #3b5998;">Instragram</a>
+            <a href="https://www.instagram.com" style="color: orange;">Instagram</a>
         </p>
     </footer>
 
