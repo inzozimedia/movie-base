@@ -13,60 +13,139 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
+            background-color: #0d0d0d; /* Dark background */
+            color: #f5f5f5; /* Light text color */
             line-height: 1.6;
         }
 
         header {
-            text-align: center;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             padding: 20px;
-            background: linear-gradient(135deg, #1a237e, #00b894); /* Darker gradient */
+            background-color: #181818; /* Darker background */
             color: white;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3f51b5; /* Bottom border for header */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-weight: 600;
+            margin-left: 20px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            color: #ff9800; /* Orange color */
+        }
+
+        /* Cinematic Trending Movies Carousel */
+        #trending-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        #trending-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .trending-movie {
+            min-width: 100%;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .trending-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        .trending-info h2 {
+            font-size: 2rem;
+            color: #ff9800; /* Orange title */
+        }
+
+        .trending-info p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        /* Genres Styling */
+        #genres-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            background-color: #121212;
+            margin-bottom: 30px;
+        }
+
+        .genre {
+            padding: 8px 10px;
+            background-color: #ff9800; /* Orange background for genres */
+            border-radius: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .genre:hover {
+            background-color: #ff6f00; /* Darker orange on hover */
         }
 
         #search-container {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         #search {
-            padding: 10px;
+            padding: 15px;
             width: 80%;
-            max-width: 400px; /* Reduced width */
-            border: none;
-            border-radius: 5px;
+            max-width: 500px;
+            border: 2px solid #ff9800; /* Orange border */
+            border-radius: 25px;
             outline: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            background-color: transparent;
+            color: white;
+            transition: border-color 0.3s ease;
+        }
+
+        #search:focus {
+            border-color: #ff9800; /* Orange border focus */
         }
 
         #movies-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
             padding: 0 20px;
-            max-width: 1200px; /* Max width for the movie grid */
-            margin: 0 auto; /* Centering */
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .movie {
-            background-color: #1e1e1e; /* Darker movie card background */
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background-color: #1e1e1e; /* Dark card background */
+            border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .movie:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
         }
 
         .movie img {
@@ -75,49 +154,56 @@
         }
 
         .movie-info {
-            padding: 10px;
+            padding: 15px;
             text-align: center;
         }
 
         .movie h2 {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            color: #ffffff; /* White title text */
+            font-size: 1.7rem;
+            margin-bottom: 10px;
+            color: #ff9800; /* Orange title */
         }
 
         .movie p {
-            color: #b0b0b0; /* Gray year text */
+            color: #b0b0b0;
+            font-size: 1rem;
         }
 
         /* Pagination styling */
         .pagination {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .pagination button {
-            padding: 10px 15px;
-            margin: 0 5px;
+            padding: 12px 20px;
+            margin: 0 8px;
             border: none;
-            background-color: #3f51b5;
+            background-color: #ff9800; /* Orange buttons */
             color: white;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 25px;
+            font-size: 1rem;
             transition: background-color 0.3s;
         }
 
         .pagination button:hover {
-            background-color: #304ffe;
+            background-color: #ff6f00;
         }
 
         footer {
             text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #1a237e; /* Darker footer */
+            padding: 20px;
+            background-color: #181818; /* Dark footer background */
             color: white;
-            border-top: 2px solid #3f51b5; /* Top border for footer */
+            border-top: 2px solid #ff9800; /* Orange border */
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 1rem;
+            opacity: 0.8;
         }
 
         /* Loading Animation */
@@ -126,14 +212,14 @@
             text-align: center;
             margin: 20px auto;
             font-size: 1.5rem;
-            color: #00b894;
+            color: #ff9800;
         }
 
         /* Center Content */
         main {
-            max-width: 1200px; /* Set max width for main content */
-            margin: 0 auto; /* Center main content */
-            padding: 0 20px; /* Padding for side */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
     </style>
 </head>
@@ -141,6 +227,14 @@
     <header>
         <h1>MOVIE BASE</h1>
     </header>
+
+    <!-- Trending Movies Cinematic Slider -->
+    <div id="trending-container">
+        <div id="trending-slider"></div>
+    </div>
+
+    <!-- Genres Container -->
+    <div id="genres-container"></div>
 
     <div id="search-container">
         <input type="text" id="search" placeholder="Search for a movie...">
@@ -158,33 +252,106 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 | MOVIE BASE</p>
+        <p>&copy; 2024 | MOVIE BASE | by BTEM | All rights reserved.</p>
     </footer>
 
     <script>
         const apiKey = 'aa3d6961efc3b487425daf0ec9f464f0'; // Your TMDB API key
-        const apiUrl = 'https://api.themoviedb.org/3/movie/popular?api_key=' + apiKey + '&language=en-US&page=';
-        const searchUrl = 'https://api.themoviedb.org/3/search/movie?api_key=' + apiKey + '&language=en-US&query=';
+        const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=`;
+        const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=`;
+        const genresUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=en-US`;
+        const genreMoviesUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&with_genres=`;
+        const trendingUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}`;
 
         let currentPage = 1;
         let totalPages = 1;
         let isSearching = false;
+        let currentTrendingIndex = 0; // To track the current trending movie being displayed
+        const slideInterval = 3000; // 3 seconds
 
-        async function fetchMovies(page, searchQuery = '') {
+        // Fetch and display trending movies
+        async function fetchTrendingMovies() {
             try {
-                const url = isSearching
-                    ? searchUrl + encodeURIComponent(searchQuery) + '&page=' + page
-                    : apiUrl + page;
-
-                const response = await fetch(url);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-
+                const response = await fetch(trendingUrl);
                 const data = await response.json();
-                totalPages = data.total_pages; // Get total pages
+                displayTrendingMovies(data.results);
+            } catch (error) {
+                console.error('Error fetching trending movies:', error);
+            }
+        }
+
+        let trendingMovies = []; // Store trending movies globally
+
+        function displayTrendingMovies(movies) {
+            trendingMovies = movies; // Store fetched movies in global variable
+            const trendingSlider = document.getElementById('trending-slider');
+            trendingSlider.innerHTML = ''; // Clear previous trending movies
+
+            movies.forEach(movie => {
+                const movieDiv = document.createElement('div');
+                movieDiv.classList.add('trending-movie');
+                movieDiv.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`;
+                movieDiv.innerHTML = `
+                    <div class="trending-info">
+                        <h2>${movie.title}</h2>
+                        <p>Release Date: ${movie.release_date}</p>
+                        <p>${movie.overview}</p> <!-- Movie description -->
+                    </div>
+                `;
+                trendingSlider.appendChild(movieDiv);
+            });
+
+            // Start auto-scrolling
+            setInterval(() => {
+                currentTrendingIndex = (currentTrendingIndex + 1) % trendingMovies.length;
+                const offset = -currentTrendingIndex * 100; // Calculate offset
+                trendingSlider.style.transform = `translateX(${offset}%)`;
+            }, slideInterval);
+        }
+
+        // Fetch and display genres
+        async function fetchGenres() {
+            try {
+                const response = await fetch(genresUrl);
+                const data = await response.json();
+                displayGenres(data.genres);
+            } catch (error) {
+                console.error('Error fetching genres:', error);
+            }
+        }
+
+        function displayGenres(genres) {
+            const genresContainer = document.getElementById('genres-container');
+            genresContainer.innerHTML = ''; // Clear previous genres
+            genres.forEach(genre => {
+                const genreDiv = document.createElement('div');
+                genreDiv.classList.add('genre');
+                genreDiv.textContent = genre.name;
+                genreDiv.addEventListener('click', () => fetchMoviesByGenre(genre.id));
+                genresContainer.appendChild(genreDiv);
+            });
+        }
+
+        // Fetch movies by genre
+        async function fetchMoviesByGenre(genreId) {
+            try {
+                const response = await fetch(genreMoviesUrl + genreId);
+                const data = await response.json();
                 displayMovies(data.results);
-                document.getElementById('current-page').textContent = `Page ${currentPage}`; // Update current page
+            } catch (error) {
+                console.error('Error fetching movies by genre:', error);
+            }
+        }
+
+        // Fetch and display popular or searched movies
+        async function fetchMovies(page, query = '') {
+            const url = query ? `${searchUrl}${query}&page=${page}` : `${apiUrl}${page}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                totalPages = data.total_pages;
+                document.getElementById('current-page').textContent = `Page ${currentPage}`;
+                displayMovies(data.results);
             } catch (error) {
                 console.error('Error fetching movies:', error);
             }
@@ -199,7 +366,7 @@
 
             movies.forEach(movie => {
                 const movieDiv = document.createElement('div');
-                movieDiv.className = 'movie';
+                movieDiv.classList.add('movie');
                 movieDiv.innerHTML = `
                     <a href="movie.html?id=${movie.id}">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
@@ -213,30 +380,33 @@
             });
         }
 
-        // Load initial movies
-        fetchMovies(currentPage);
+        // Initial fetches
+        fetchTrendingMovies(); // Fetch trending movies
+        fetchMovies(currentPage); // Fetch popular movies
+        fetchGenres(); // Fetch and display genres
 
-        // Search functionality
-        document.getElementById('search').addEventListener('input', function() {
+        // Handle search input
+        document.getElementById('search').addEventListener('input', function () {
             const query = this.value.trim();
             isSearching = query.length > 0;
-            currentPage = 1; // Reset to the first page
+            currentPage = 1;
             document.getElementById('loading').style.display = 'block'; // Show loading indicator
             fetchMovies(currentPage, query);
         });
 
-        // Previous and Next buttons functionality
+        // Pagination functionality (previous page)
         document.getElementById('prev-page').addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
-                fetchMovies(currentPage);
+                fetchMovies(currentPage, isSearching ? document.getElementById('search').value : '');
             }
         });
 
+        // Pagination functionality (next page)
         document.getElementById('next-page').addEventListener('click', () => {
             if (currentPage < totalPages) {
                 currentPage++;
-                fetchMovies(currentPage);
+                fetchMovies(currentPage, isSearching ? document.getElementById('search').value : '');
             }
         });
     </script>
